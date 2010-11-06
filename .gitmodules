@@ -1,3 +1,6 @@
 [submodule "tidbits/unit_testing"]
 	path = tidbits/unit_testing
 	url = git://github.com/najamelan/TidBits_Cpp_UnitTesting.git
+[submodule "tidbits/ctassert"]
+	path = tidbits/ctassert
+	url = git://github.com/najamelan/TidBits_Cpp_CTAssert.git
