@@ -36,6 +36,7 @@
  * -# compile with treat warnings as errors at high warning level (eg /W4 on msvc)
  * -# write portable code (eg disable language extensions) and don't use platform specific calls if cross platform is possible
  * -# prefer references above pointers
+ * -# remember that the best code is written with the delete key
  *
  *
  * <b>Naming conventions in tidbits</b>

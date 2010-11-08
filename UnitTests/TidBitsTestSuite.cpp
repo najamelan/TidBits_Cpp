@@ -11,7 +11,7 @@
 // Tidbits to be tested
 
 #include <tidbits/ctassert/test_ctassert.hpp>
-
+#include <tidbits/unit_testing/test_unit_testing.hpp>
 
 // Unit testing includes
 
@@ -65,7 +65,7 @@ runTest( UnitTesting* test, TestResult& testResult  )
 
 /**
  * Currently this application relies on your compiler searching for includes in a certain order.
- * Stub includes are used to allow compilation en testing when only a subset of the existing
+ * Stub includes are used to allow compilation and testing when only a subset of the existing
  * modules are present on your system.
  *
  * There is a directory TidBits_Cpp/UnitTests/missingIncludes which provides stubs for all test includes for
@@ -92,6 +92,8 @@ main()
 
 	TestResult testResult;
 
+	runTest( new TestUnitTesting, testResult );
+
    // Test CTAssert
 	#ifdef test_ctassert_hpp
 
@@ -101,11 +103,11 @@ main()
 
 
    // Test suite
-   std::cout 													<< testResult.message 					<< std::endl	;
-   std::cout << "\nTidbits test suite results:\n" 													<< std::endl	;
-   std::cout << "   Tests run   : " 					<< testResult.tests_count 				<< std::endl	;
-   std::cout << "   Tests passed: " 					<< testResult.tests_passed_count		<< std::endl	;
-   std::cout << "   Tests failed: " 					<< testResult.tests_failed_count		<< std::endl	;
+   std::cout 														<< testResult.message 					<< std::endl	;
+   std::cout << "\n\nTidbits test suite results:\n" 													<< std::endl	;
+   std::cout << "   Tests run   : " 						<< testResult.tests_count 				<< std::endl	;
+   std::cout << "   Tests passed: " 						<< testResult.tests_passed_count		<< std::endl	;
+   std::cout << "   Tests failed: " 						<< testResult.tests_failed_count		<< std::endl	;
 
 
 	if		 ( testResult.tests_count 			== 0 )
